@@ -1,9 +1,9 @@
 #include <Bounce2.h>
 
 // DEFINE buttons >> pins
-#define PIN_UP 255 // Unused, change if needed.
-#define PIN_DOWN 255 // Unused, change if needed.
-#define PIN_LEFT 1
+#define PIN_UP 1
+#define PIN_DOWN 2
+#define PIN_LEFT 3
 #define PIN_RIGHT 0
 #define PIN_A 4
 #define PIN_B 5
@@ -13,14 +13,8 @@
 #define PIN_RB 8
 #define PIN_LT 16
 #define PIN_RT 10
-#define PIN_START 15
-#define PIN_SELECT 14
-#define PIN_HOME 18 // Unused, uncomment the command "buttonHOME.attach" in the Main file to use it.
-
-#define PIN_SWITCHMODE 19  // Button to switch the Mode of the controller. (go to SLIDER MENU)
-#define PIN_NAVMODE 18     // Button to enable NAVIGATION MODE that let you have different mapping
-
-
+#define PIN_START 23 //15
+#define PIN_SELECT 22 //14
 
 // DEFINE buttons addresses
 #define CAPTURE_MASK_ON 0x2000
