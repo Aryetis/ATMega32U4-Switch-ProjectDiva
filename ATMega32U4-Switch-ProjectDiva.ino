@@ -29,8 +29,6 @@ Bounce buttonX = Bounce();
 Bounce buttonY = Bounce();
 Bounce buttonLB = Bounce();
 Bounce buttonRB = Bounce();
-Bounce buttonLT = Bounce();
-Bounce buttonRT = Bounce();
 Bounce buttonSTART = Bounce();
 Bounce buttonSELECT = Bounce();
 
@@ -49,8 +47,6 @@ void setupPins()
   buttonY.attach(PIN_Y,INPUT_PULLUP);
   buttonLB.attach(PIN_LB,INPUT_PULLUP);
   buttonRB.attach(PIN_RB,INPUT_PULLUP);
-  buttonLT.attach(PIN_LT,INPUT_PULLUP);
-  buttonRT.attach(PIN_RT,INPUT_PULLUP);
   buttonSTART.attach(PIN_START,INPUT_PULLUP);
   buttonSELECT.attach(PIN_SELECT,INPUT_PULLUP);
 
@@ -64,8 +60,6 @@ void setupPins()
   buttonY.interval(MILLIDEBOUNCE);
   buttonLB.interval(MILLIDEBOUNCE);
   buttonRB.interval(MILLIDEBOUNCE);
-  buttonLT.interval(MILLIDEBOUNCE);
-  buttonRT.interval(MILLIDEBOUNCE);
   buttonSTART.interval(MILLIDEBOUNCE);
   buttonSELECT.interval(MILLIDEBOUNCE);
 }
@@ -110,8 +104,6 @@ void buttonRead()
     if (buttonY.update()) {buttonStatus[BUTTONY] = buttonY.fell();}
     if (buttonLB.update()) {buttonStatus[BUTTONLB] = buttonLB.fell();}
     if (buttonRB.update()) {buttonStatus[BUTTONRB] = buttonRB.fell();}
-    if (buttonLT.update()) {buttonStatus[BUTTONLT] = buttonLT.fell();}
-    if (buttonRT.update()) {buttonStatus[BUTTONRT] = buttonRT.fell();}
     if (buttonSTART.update()) {buttonStatus[BUTTONSTART] = buttonSTART.fell();}
     if (buttonSELECT.update()) {buttonStatus[BUTTONSELECT] = buttonSELECT.fell();}
 }
@@ -141,10 +133,8 @@ void buttonProcessing()
   if (buttonStatus[BUTTONB]) {ReportData.Button |= B_MASK_ON;}
   if (buttonStatus[BUTTONX]) {ReportData.Button |= X_MASK_ON;}
   if (buttonStatus[BUTTONY]) {ReportData.Button |= Y_MASK_ON;}
-  if (buttonStatus[BUTTONLB]) {ReportData.Button |= LB_MASK_ON;}
-  if (buttonStatus[BUTTONRB]) {ReportData.Button |= RB_MASK_ON;}
-  if (buttonStatus[BUTTONLT]) {ReportData.Button |= ZL_MASK_ON;}
-  if (buttonStatus[BUTTONRT]) {ReportData.Button |= ZR_MASK_ON;}
+  if (buttonStatus[BUTTONLB]) {ReportData.Button |= LB_MASK_ON; ReportData.Button |= ZL_MASK_ON;}
+  if (buttonStatus[BUTTONRB]) {ReportData.Button |= RB_MASK_ON; ReportData.Button |= ZR_MASK_ON;}
   if (buttonStatus[BUTTONSTART]) {ReportData.Button |= START_MASK_ON;}
   if (buttonStatus[BUTTONSELECT]) {ReportData.Button |= SELECT_MASK_ON;}
 }

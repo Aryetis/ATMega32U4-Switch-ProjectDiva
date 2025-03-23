@@ -1,10 +1,10 @@
 #include <Bounce2.h>
 
 // DEFINE buttons >> pins
-#define PIN_UP 1
+// #define PIN_UP 1
 #define PIN_DOWN 2
 #define PIN_LEFT 3
-#define PIN_RIGHT 0
+// #define PIN_RIGHT 0
 #define PIN_A 4
 #define PIN_B 5
 #define PIN_X 7
@@ -13,8 +13,14 @@
 #define PIN_RB 8
 #define PIN_LT 16
 #define PIN_RT 10
-#define PIN_START 23 //15
-#define PIN_SELECT 22 //14
+// #define PIN_START 23
+// #define PIN_SELECT 22
+
+
+#define PIN_UP 23
+#define PIN_RIGHT 22
+#define PIN_START 1
+#define PIN_SELECT 0
 
 // DEFINE buttons addresses
 #define CAPTURE_MASK_ON 0x2000
